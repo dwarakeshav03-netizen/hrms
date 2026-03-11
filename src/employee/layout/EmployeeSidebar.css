@@ -1,0 +1,20 @@
+.employee-sidebar {
+  width: 220px;
+  background: #1a237e;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.employee-sidebar a.active,
+.employee-sidebar a:hover {
+  background: #3949ab;
+}

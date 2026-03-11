@@ -1,0 +1,82 @@
+/* Core Card Style */
+.ess-card {
+    background: white;
+    margin-top: 7.5px;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* One-Line Button Container */
+.action-button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+}
+
+/* Royal Blue Buttons */
+.btn-royal, .btn-royal-outline {
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-royal {
+    background-color: #2563eb;
+    color: white !important;
+    border: none;
+}
+
+.btn-royal-outline {
+    background-color: white;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+
+.btn-royal:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-royal-outline:hover {
+    background-color: #f0f7ff;
+}
+
+/* Blue Document Tile - Pure White Text Fix */
+.doc-blue-tile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background-color: #2563eb;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    color: white !important;
+}
+
+.doc-blue-tile span, 
+.doc-blue-tile svg {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.doc-blue-tile:hover {
+    background-color: #1d33d8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+}

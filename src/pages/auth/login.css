@@ -1,0 +1,166 @@
+/* PAGE */
+.login-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* VIDEO BACKGROUND */
+.login-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* BLUE OVERLAY */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 76, 129, 0.45);
+  z-index: 1;
+}
+
+/* TOP-LEFT LOGO (GLASS BADGE) */
+/* TOP LOGO ABOVE LOGIN BOX */
+.login-brand {
+  position: absolute;
+
+  /* center horizontally */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* place above white card */
+  top: calc(50% - 260px); /* adjust slightly if needed */
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-brand img {
+  height: 90px;
+  width: auto;
+}
+
+
+.login-brand img {
+  height: 90px;
+  width: auto;
+  margin-top: -10px;
+}
+
+/* LOGIN CARD */
+.login-card {
+  position: relative;
+  z-index: 2;
+
+  width: 380px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(15, 76, 129, 0.05);
+}
+
+/* HRMS TITLE */
+.login-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: #0f4c81;
+  font-weight: 600;
+  margin-top: -6px;
+  margin-bottom: 18px;
+}
+
+/* FORM */
+.login-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.login-row label {
+  font-size: 15px;
+  color: #374151;
+}
+
+.login-row input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.login-row input:focus {
+  outline: none;
+  border-color: #0f4c81;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+
+  background: #0f4c81;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #0c3e69;
+}
+/* EXTRA ACTIONS */
+.login-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+  margin-bottom: 12px;
+}
+
+.forgot-link {
+  font-size: 14px;
+  color: #0f4c81;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* SIGN UP */
+.signup-box {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #374151;
+}
+
+.signup-link {
+  color: #0f4c81;
+  font-weight: 600;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}

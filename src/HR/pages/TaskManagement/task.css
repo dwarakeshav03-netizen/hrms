@@ -1,0 +1,6 @@
+.onboarding-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 🔑 FORCE 4 */
+  gap: 20px;
+
+}

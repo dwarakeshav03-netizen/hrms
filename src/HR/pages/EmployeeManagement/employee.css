@@ -1,0 +1,31 @@
+.employee-page {
+  padding: 1px 32px 24px;   /* 🔑 smaller top padding */
+  background: #f8fafc;
+  min-height: 100%;
+}
+.employee-filter-bar{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+
+.employee-filter-item{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:180px;
+}
+
+.employee-filter-item label{
+  font-size:12px;
+  font-weight:600;
+  color:#6b7280;
+}
+
+.employee-filter-item input,
+.employee-filter-item select{
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+}

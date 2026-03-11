@@ -1,0 +1,63 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 240px;
+  height: 100vh;          /* FULL HEIGHT */
+  background: #0f4c81;
+  position: fixed;        /* LOCK SIDEBAR */
+  top: 0;
+  left: 0;
+}
+
+/* ===== RIGHT SECTION ===== */
+.layout-right {
+  margin-left: 240px;     /* SAME AS SIDEBAR WIDTH */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  padding-top: 0;
+}
+
+/* ===== HEADER ===== */
+.topbar {
+  height: 70px;
+  flex-shrink: 0;
+  background: #0f4c81;
+  color: #fff;
+   margin: 0;          /* 🔥 IMPORTANT */
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  
+}
+
+/* ===== MAIN CONTENT ===== */
+.layout-content {
+  flex: 1;
+  overflow-y: auto;
+  background: #f8fafc;
+  padding: 24px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  height: 40px;
+  flex-shrink: 0;
+  background: #f1f5f9;
+  text-align: center;
+  line-height: 40px;
+  font-size: 13px;
+  color: #475569;
+}

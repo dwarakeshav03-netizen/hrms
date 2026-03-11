@@ -1,0 +1,89 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HTML & BODY ===== */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;          /* 🔒 BODY CANNOT SCROLL */
+  background: #f4f7fb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+/* ===== REACT ROOT ===== */
+#root {
+  height: 100%;
+}
+/* ===== CREST CLIMBERS BRANDING ===== */
+:root {
+  --brand-blue: #003366;
+  --bg-light: #f4f7fe;
+}
+
+/* Professional Card Styling for ESS Portal Modules */
+.ess-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.ess-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 51, 102, 0.08);
+}
+
+/* Document Button Styles */
+.doc-button:hover {
+  background-color: var(--brand-blue) !important;
+  color: white !important;
+  transform: scale(1.02);
+}
+
+/* Timeline/Recent Updates Vertical Line */
+.timeline-line {
+  position: relative;
+}
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  background: #e2e8f0;
+}
+/* Professional ESS Card UI Styles */
+.ess-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ess-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 51, 102, 0.1);
+}
+
+.doc-button { transition: all 0.2s; }
+.doc-button:hover {
+  background-color: #003366 !important;
+  color: white !important;
+}
+
+.timeline-line { position: relative; }
+.timeline-line::before {
+  content: ''; position: absolute; left: 5px; top: 10px; bottom: 0;
+  width: 2px; background: #e2e8f0;
+}

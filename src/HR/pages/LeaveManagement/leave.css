@@ -1,0 +1,266 @@
+/* =============================
+   STATS GRID
+============================= */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* =============================
+   CARD BASE
+============================= */
+.card {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+/* =============================
+   PAGE & SECTION HEADINGS
+============================= */
+.page-title,
+.onboarding-page h1 {
+  color: #0f4c81;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f4c81;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+/* =============================
+   STATS CARDS
+============================= */
+.stats .card,
+.onboarding-stats .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.onboarding-stats .card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.leave-page .page-title {
+  margin-top: 0;      /* 🔑 prevents extra drop */
+  margin-bottom: 24px;
+}
+
+
+.onboarding-stats .card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f4c81;
+}
+
+/* =============================
+   TABLE BASE (CRITICAL FIX)
+============================= */
+.onboarding-table {
+  width: 100%;
+  border-collapse: collapse;   /* 🔑 IMPORTANT */
+}
+
+.onboarding-table tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.onboarding-table td {
+  border-bottom: none;
+}
+
+/* =============================
+   TABLE TYPOGRAPHY
+============================= */
+.onboarding-table th {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.6px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.onboarding-table td {
+  font-size: 14px;
+  color: var(--text-primary);
+  padding: 14px 12px;
+  vertical-align: middle;
+}
+
+/* =============================
+   TABLE ALIGNMENT
+============================= */
+.onboarding-table th:first-child,
+.onboarding-table th:nth-child(2),
+.onboarding-table td:first-child,
+.onboarding-table td:nth-child(2) {
+  text-align: left;
+}
+
+.onboarding-table th:nth-child(3),
+.onboarding-table th:nth-child(4),
+.onboarding-table th:nth-child(5),
+.onboarding-table th:nth-child(6),
+.onboarding-table th:nth-child(7),
+.onboarding-table td:nth-child(3),
+.onboarding-table td:nth-child(4),
+.onboarding-table td:nth-child(5),
+.onboarding-table td:nth-child(6),
+.onboarding-table td:nth-child(7) {
+  text-align: center;
+}
+
+/* =============================
+   MULTI-LINE CELL CLEANUP
+============================= */
+.onboarding-table td strong {
+  display: block;
+  font-weight: 600;
+}
+
+.muted-text {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =============================
+   ACTION CELL (THE REAL FIX)
+============================= */
+.action-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* =============================
+   MODAL
+============================= */
+.dashboard-modal .modal-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f4c81;
+}
+
+.modal-body p {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.modal-body p strong {
+  font-weight: 600;
+}
+
+.form-footer {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* =============================
+   PRIMARY BUTTON
+============================= */
+.btn-primary {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+.leave-page{
+  padding: 1px 32px 24px;
+   background: #f8fafc; 
+}
+/* =============================
+   ACTION CELL (APPROVE / REJECT)
+============================= */
+.action-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;            /* 🔑 spacing between buttons */
+  white-space: nowrap; /* prevents wrap */
+}
+/* =============================
+   LEAVE FILTER BAR (ATTENDANCE STYLE)
+============================= */
+
+/* =============================
+   LEAVE FILTER BAR (REFINED)
+============================= */
+
+.leave-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  /* 🔥 move it slightly up */
+  margin-top: 9px;
+  margin-bottom: 10px;
+
+  /* 🔥 make height smaller */
+  padding: 10px 16px;
+
+  /* 🔥 different color from stat cards */
+  background: #ffffff;
+
+  border-radius: 14px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-item label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.leave-filter-bar input,
+.leave-filter-bar select {
+  height: 34px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #fff;
+}
+
+.filter-search {
+  width: 260px;
+}
+
+.filter-select {
+  min-width: 200px;
+}

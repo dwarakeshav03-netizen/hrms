@@ -1,0 +1,155 @@
+/* =========================
+   APP ROOT LAYOUT
+========================= */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f4f7fb;
+}
+
+/* =========================
+   MAIN CONTENT AREA
+   (below fixed topbar)
+========================= */
+.main-content {
+  margin-top: 64px;                 /* topbar height */
+  height: calc(100vh - 64px);
+  overflow-y: auto;                 /* SINGLE scrollbar */
+  padding: 24px;
+  background: #f4f7fb;
+}
+
+/* =========================
+   GLOBAL FONT SYSTEM
+========================= */
+* {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* =========================
+   STATUS PILLS
+========================= */
+.status {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.status.approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0f4c81;
+  color: #fff;
+}
+
+.btn.success {
+  background: #16a34a;
+  color: #fff;
+}
+
+.btn.danger {
+  background: #dc2626;
+  color: #fff;
+}
+/* Professional Royal Blue Button */
+.btn-royal {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.btn-royal:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Premium Document Tile */
+.doc-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.doc-tile:hover {
+  border-color: #2563eb;
+  background: #f8fafc;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+}
+/* ===============================
+   CUSTOM SQUARE CHECKBOX
+=============================== */
+
+.payroll-table input[type="checkbox"]{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #1f2937;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+/* checked state */
+
+.payroll-table input[type="checkbox"]:checked{
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* check icon */
+
+.payroll-table input[type="checkbox"]:checked::after{
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 13px;
+  left: 3px;
+  top: -1px;
+  font-weight: bold;
+}

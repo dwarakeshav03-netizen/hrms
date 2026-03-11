@@ -1,0 +1,762 @@
+/* =====================================================
+   ROOT CONTAINER
+===================================================== */
+.payroll-admin-container{
+  padding:24px 32px;
+  background:#f4f6f9;
+  min-height:100vh;
+  font-family:Inter, system-ui, -apple-system, sans-serif;
+}
+
+.payroll-title{
+  font-size:22px;
+  font-weight:700;
+  color:#0f4c81;
+  margin-bottom:12px;
+}
+
+/* =====================================================
+   GRID + KPI CARDS
+===================================================== */
+.payroll-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:18px;
+  margin-top:12px;
+}
+
+.payroll-stat{
+  background:#fff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+  transition:0.2s ease;
+}
+
+.payroll-stat:hover{
+  transform:translateY(-2px);
+}
+
+.payroll-stat h4{
+  font-size:13px;
+  color:#6b7280;
+  margin-bottom:6px;
+}
+
+.payroll-stat p{
+  font-size:20px;
+  font-weight:700;
+  color:#111827;
+}
+
+.payroll-stat.success{
+  border-left:4px solid #22c55e;
+}
+
+.payroll-stat.warning{
+  border-left:4px solid #f59e0b;
+}
+
+.payroll-stat.highlight{
+  border-left:4px solid #2563eb;
+}
+
+/* =====================================================
+   CARDS + SECTIONS
+===================================================== */
+.payroll-card{
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  margin-top:22px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.06);
+}
+
+.payroll-section{
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  margin-top:22px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.05);
+}
+
+.payroll-section h3{
+  font-size:16px;
+  margin-bottom:14px;
+  color:#1f2937;
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+.payroll-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.payroll-table th{
+  text-align:left;
+  font-size:12px;
+  font-weight:600;
+  color:#6b7280;
+  padding:12px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.payroll-table td{
+  padding:12px;
+  font-size:14px;
+  border-bottom:1px solid #f1f5f9;
+}
+
+.payroll-table tr:hover{
+  background:#f9fafb;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.payroll-btn{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600;
+  margin-right:8px;
+  transition:0.2s;
+}
+
+.payroll-btn:hover{
+  background:#1d4ed8;
+}
+
+.payroll-btn:disabled{
+  opacity:0.5;
+  cursor:not-allowed;
+}
+
+.payroll-btn.danger{
+  background:#ef4444;
+}
+
+.payroll-btn.danger:hover{
+  background:#dc2626;
+}
+
+.approve-btn{
+  background:#22c55e;
+  color:#fff;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-right:6px;
+}
+
+.reject-btn{
+  background:#f59e0b;
+  color:#fff;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.download-btn{
+  background:#0ea5e9;
+  color:#fff;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* =====================================================
+   STATUS PILLS
+===================================================== */
+.status-pill{
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.status-approved{
+  background:#bbf7d0;
+  color:#166534;
+}
+
+.status-pending{
+  background:#fde68a;
+  color:#92400e;
+}
+
+.status-locked{
+  background:#e5e7eb;
+  color:#374151;
+}
+
+.status-badge{
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.status-badge.active{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+.status-badge.locked{
+  background:#e5e7eb;
+  color:#374151;
+}
+
+/* =====================================================
+   CONTROLS (FILTERS, SELECTS)
+===================================================== */
+.approval-filters{
+  margin-top:14px;
+}
+
+.approval-filters button{
+  background:#f1f5f9;
+  border:none;
+  padding:6px 12px;
+  border-radius:8px;
+  margin-right:8px;
+  cursor:pointer;
+}
+
+.approval-filters .active{
+  background:#2563eb;
+  color:#fff;
+}
+
+.month-select,
+.dept-select{
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+  margin-right:8px;
+}
+
+.salary-controls,
+.report-controls,
+.payslip-controls{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+}
+
+/* =====================================================
+   PROGRESS BAR (PROCESS PAYROLL PAGE)
+===================================================== */
+.progress-box{
+  margin-bottom:14px;
+}
+
+.progress-bar{
+  width:100%;
+  height:8px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:6px;
+}
+
+.progress-fill{
+  height:100%;
+  background:#22c55e;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width:768px){
+
+  .payroll-admin-container{
+    padding:18px;
+  }
+
+  .payroll-grid{
+    grid-template-columns:1fr;
+  }
+
+  .salary-controls,
+  .report-controls,
+  .payslip-controls{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+/* Bulk Action Ribbon - Modern Floating Style */
+.bulk-action-ribbon {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a202c;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bulk-action-ribbon.show {
+    top: 20px;
+}
+
+.ribbon-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.bulk-approve { background: #2ecc71; color: white; border: none; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+.bulk-reject { background: #e74c3c; color: white; border: none; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+.bulk-cancel { background: transparent; color: #a0aec0; border: none; cursor: pointer; font-size: 14px; text-decoration: underline; }
+
+/* Table Selection Styles */
+.row-selected {
+    background-color: #f0f7ff !important;
+}
+
+.custom-check {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3182ce; /* Modern Blue */
+}
+
+/* Ensure the table looks clean with the new columns */
+.payroll-table th, .payroll-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #edf2f7;
+}
+/* Table Layout and Checkbox Alignment */
+.select-column {
+    width: 50px;
+    text-align: center;
+    padding: 12px 10px !important;
+}
+
+.payroll-table input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #2196f3;
+}
+
+/* Selection State Styling */
+.row-selected {
+    background-color: #f0f7ff !important; 
+}
+
+.approval-actions {
+    min-width: 160px; /* Prevents column jump when buttons hide */
+    text-align: right;
+}
+
+/* Floating Bulk Action Bar */
+.bulk-action-float {
+    position: fixed;
+    bottom: -100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a202c; 
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+    z-index: 1000;
+    transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bulk-action-float.show {
+    bottom: 40px; 
+}
+
+.bulk-btn-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.bulk-approve-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.bulk-approve-btn:hover { background: #219150; }
+
+.bulk-reject-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.bulk-reject-btn:hover { background: #c0392b; }
+
+.bulk-close-btn {
+    background: transparent;
+    color: #cbd5e0;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+    padding: 5px;
+}
+/* ===============================
+   CUSTOM SQUARE CHECKBOX
+=============================== */
+
+.payroll-table input[type="checkbox"]{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #1f2937;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+/* checked state */
+
+.payroll-table input[type="checkbox"]:checked{
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* check icon */
+
+.payroll-table input[type="checkbox"]:checked::after{
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 13px;
+  left: 3px;
+  top: -1px;
+  font-weight: bold;
+}
+.status-rejected{
+  background:#fecaca;
+  color:#991b1b;
+}
+/* =====================================================
+   TABLE SELECTION & HOVER FIXES
+===================================================== */
+
+/* Updated Selection State: Using a slightly darker blue for better visibility on #f4f6f9 */
+.row-selected {
+    background-color: #e0f2fe !important; /* Light sky blue */
+}
+
+/* Updated Hover State: Only apply hover to rows NOT already selected */
+.payroll-table tr:not(.row-selected):hover {
+    background: #ffffff; /* pure white on hover for unselected rows */
+    box-shadow: inset 0 0 0 1px #e5e7eb; /* subtle inner border effect */
+}
+
+/* Ensure the background of unselected rows is transparent or matches container */
+.payroll-table tr {
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+/* Table Layout Fix to prevent background "bleeding" */
+.payroll-table {
+    width: 100%;
+    border-collapse: separate; /* Changed from collapse */
+    border-spacing: 0;
+    background: transparent;
+}
+/* Updated Table Headings */
+.payroll-table th {
+    text-align: left;
+    font-size: 15px!important;
+               
+    color: #000000 !important;   
+    padding: 12px 15px;              
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;     
+    white-space: nowrap;        
+}
+
+/* Maintain center alignment for the Action header if buttons are centered */
+.payroll-table th:last-child {
+    text-align: center;
+}
+.approval-actions {
+    
+    justify-content: center; /* Centers the button group in the column */
+    align-items: center;
+    gap: 12px;               /* This creates the space between the buttons */
+    min-width: 180px;        /* Keeps column width stable */
+    padding: 16px !important;
+}
+.payslip-input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.payslip-input-grid input {
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+.highlight-input {
+    border: 2px solid #2563eb !important;
+    background-color: #eff6ff;
+    font-weight: bold;
+}
+
+.payslip-preview {
+    margin-top: 30px;
+    border: 1px solid #cbd5e1;
+    background: white;
+}
+
+.payslip-columns {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.column {
+    flex: 1;
+    padding: 15px;
+    border-right: 1px solid #cbd5e1;
+}
+
+.column:last-child { border-right: none; }
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.row.total {
+    border-top: 1px solid #000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.net-pay-footer {
+    text-align: center;
+    
+    background: #f8fafc;
+}
+.payroll-admin-container { padding: 30px; background-color: #f5f7fa; font-family: 'Segoe UI', sans-serif; }
+
+/* Input split grid styling */
+.input-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  border-left: solid#0ea5e9;
+}
+
+.input-split-column {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-split-column input {
+  padding: 12px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.highlight-input { border: 2px solid #409eff !important; font-weight: bold; }
+
+/* Professional summary template */
+.payslip-preview-container {
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+}
+
+.summary-header-grid { display: flex;}
+.summary-col { flex: 1; padding: 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.summary-item { display: flex; justify-content: space-between; font-size: 14px; }
+.summary-item strong { color: #606266; font-weight: 600; }
+
+.border-left { border-left: 1px solid #ebeef5; }
+.dark-divider { border: none;}
+
+.financial-grid { display: flex; border-bottom: 1px solid #ebeef5; }
+.fin-column { flex: 1; padding: 25px; }
+.fin-column h4 {font-size: large; border-bottom: 1px solid #ebeef5; padding-bottom: 10px; margin-bottom: 15px; }
+
+.fin-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; }
+.total-line { border-top: 1px solid #ebeef5; padding-top: 10px; margin-top: 5px; }
+.final-total { font-weight: bold; border-top: 1px solid #303133; padding-top: 10px; margin-top: 15px; }
+
+.net-pay-footer { text-align: center; padding: 25px; background: #fafafa; }
+.save-btn { margin-top: 20px; padding: 12px 30px; background: #409eff; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+/* Financial grid container-ku align-items stretch kudukanum appo thaan line even-ah varum */
+.financial-grid { 
+  display: flex; 
+  border-bottom: 1px solid #ebeef5; 
+  align-items: stretch; /* Ithu thaan rendu side-aiyum orey height-la vekkum */
+}
+
+.fin-column { 
+  flex: 1; 
+  padding: 25px; 
+  display: flex;
+  flex-direction: column; /* Column layout for better internal alignment */
+}
+
+/* Fin-row-la last row (Total line) mattum keezha push panna auto margin use pannalam */
+.final-total { 
+  font-weight: bold; 
+  border-top: 1px solid #303133; 
+  padding-top: 10px; 
+  margin-top: auto; /* Ithu thaan left/right total lines-ai orey height-ku kondu varum */
+}
+
+/* summary section-la border venaam nu sonnathala preview container border remove pannidalam */
+.payslip-preview-container {
+  background: #fff;
+  border-radius: 8px;
+  border: none; /* Border remove panniyachu */
+  box-shadow: none; /* Shadow-um venaam na remove pannidunga */
+}
+
+/* Horizontal line (dark-divider) Earnings mela correct-ah ukanthuka */
+/* =====================================================
+   ADVANCED SHADOW & DEPTH EFFECTS 
+===================================================== */
+
+/* 1. Main Input Card Shadow - Layered for a "Raised" effect */
+.input-main-grid {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+/* 2. Payslip Preview - Floating Document Effect */
+.payslip-preview-container {
+    background: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #e2e8f0 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift the payslip slightly when hovering */
+.payslip-preview-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* 3. Inset Depth for Net Pay Footer */
+.net-pay-footer {
+    background: linear-gradient(to bottom, #fdfdfd, #f8fafc) !important;
+    box-shadow: inset 0 8px 15px -3px rgba(0, 0, 0, 0.05) !important;
+    border-top: 1px solid #eee !important;
+}
+
+/* 4. Soft Depth for Input Fields */
+.input-split-column input {
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.02);
+    transition: all 0.2s ease;
+}
+
+.input-split-column input:focus {
+    box-shadow: 0 0 0 4px rgba(64, 158, 255, 0.1), 
+                0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 5. Button Elevation */
+.save-btn {
+    box-shadow: 0 4px 6px -1px rgba(64, 158, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    box-shadow: 0 10px 15px -3px rgba(64, 158, 255, 0.4);
+    transform: translateY(-2px);
+}
+element.style {
+    background: rgb(255, 255, 255);
+    /* padding: 20px; */
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.payroll-admin-container {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.financial-grid {
+  display: flex;
+  align-items: stretch;
+}
+
+.fin-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.fin-row {
+  display: flex;
+  justify-content: space-between; /* This justifies labels and values */
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.info-label { color: #9ca3af; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+.info-value { color: #111827; font-weight: 700; }
+
+.final-total {
+  margin-top: auto; /* Aligns both total rows perfectly at the bottom */
+  border-top: 2px solid #000;
+  padding-top: 10px;
+  font-weight: 800;
+}
