@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+// --- ADDED: useOutletContext for the wrapper logic ---
+import { NavLink, useLocation, useOutletContext } from "react-router-dom"; 
 import {
   FaThLarge,
   FaUsers,
   FaMoneyBill,
   FaChartBar,
   FaChevronDown,
-  FaUserAlt // CITED: Added to match the existing icon set
+  FaUserAlt
 } from "react-icons/fa";
 import "./hrSidebar.css";
 
 const HRSidebar = () => {
   const location = useLocation();
+  
+  // --- ADDED: Accessing the Wrapper Data ---
+  // Inga neenga layout-la irunthu anupuna 'hrContext' data kedaikum
+  // const [hrContext] = useOutletContext() || [{}]; 
 
   const isEmployeeActive =
     location.pathname.startsWith("/hr/employees") ||
@@ -23,7 +28,6 @@ const HRSidebar = () => {
 
   const [empOpen, setEmpOpen] = useState(isEmployeeActive);
 
-  // ✅ Keep dropdown open when route changes
   useEffect(() => {
     setEmpOpen(isEmployeeActive);
   }, [isEmployeeActive]);
@@ -33,7 +37,6 @@ const HRSidebar = () => {
       <div className="sidebar-header">Crest Climbers</div>
 
       <div className="sidebar-menu">
-
         {/* DASHBOARD */}
         <NavLink
           to="/hr/dashboard"
@@ -107,7 +110,6 @@ const HRSidebar = () => {
             Task Management
           </NavLink>
 
-
           <NavLink
             to="/hr/exit"
             className={({ isActive }) =>
@@ -150,7 +152,6 @@ const HRSidebar = () => {
           <FaUserAlt className="icon" />
           My Portal
         </NavLink>
-
       </div>
     </div>
   );

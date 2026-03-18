@@ -1,5 +1,7 @@
+// --- ADDED: Layout Import ---
+import HRLayout from "./layout/HRLayout"; 
 
-
+// Existing Imports
 import HRDashboard from "./pages/Dashboard/HRDashboard";
 import EmployeeList from "./pages/EmployeeManagement/EmployeeList";
 import LeaveDashboard from "./pages/LeaveManagement/LeaveDashboard";
@@ -8,10 +10,12 @@ import ExitRequests from "./pages/ExitManagement/ExitRequests";
 import Payroll from "./pages/Payroll/Payroll";
 import Reports from "./pages/Reports/Reports";
 
+// HRRoutes Configuration
 const HRRoutes = {
   path: "/hr",
-  element: <HRLayout />,
+  element: <HRLayout />, // Inga namba update panna wrapper layout connect aagiduchu
   children: [
+    { index: true, element: <HRDashboard /> }, // Added: Default view for /hr
     { path: "dashboard", element: <HRDashboard /> },
     { path: "employees", element: <EmployeeList /> },
     { path: "leave", element: <LeaveDashboard /> },

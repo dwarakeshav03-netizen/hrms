@@ -7,6 +7,9 @@ import "../EmployeeManagement/employee.css";
 import "../../../HR/pages/LeaveManagement/leave.css"; // 🔥 reuse same filter css
 
 const ExitRequests = () => {
+  // NEW STATE FOR MODAL
+  const [showInitiateModal, setShowInitiateModal] = useState(false);
+
   const [requests, setRequests] = useState([
     {
       id: 1,
@@ -160,7 +163,25 @@ const ExitRequests = () => {
 
       {/* ACTIVE EXIT REQUESTS */}
       <div className="employee-table-card">
-        <h2>Active Exit Requests</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+          <h2 style={{ margin: 0 }}>Active Exit Requests</h2>
+          
+          <button 
+            className="btn-danger" 
+            style={{ 
+              padding: '10px 20px', 
+              borderRadius: '6px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '8px',
+              fontWeight: '600',
+              cursor: 'pointer'
+            }}
+            onClick={() => setShowInitiateModal(true)} // OPEN CUSTOM MODAL
+          >
+            <span style={{ fontSize: '18px' }}>+</span> Initiate Exit
+          </button>
+        </div>
 
         <Table
           columns={[
@@ -233,7 +254,57 @@ const ExitRequests = () => {
         )}
       </div>
 
-      {/* MODAL (UNCHANGED) */}
+      {/* =========================================
+           NEW INITIATE EXIT MODAL (DASHBOARD STYLE)
+      ========================================= */}
+      {showInitiateModal && (
+        <>
+          <div className="dashboard-overlay" onClick={() => setShowInitiateModal(false)} />
+          <div className="dashboard-modal" style={{ maxWidth: '600px' }}>
+            <div className="modal-header">
+              <h3 style={{ color: '#1a3353' }}>Initiate Exit</h3>
+              <button className="modal-close" onClick={() => setShowInitiateModal(false)}>×</button>
+            </div>
+            <div className="modal-body">
+              <h4 style={{ color: '#d9534f', marginTop: 0 }}>Initiate Exit</h4>
+              <p style={{ fontSize: '13px', color: '#666' }}>This action cannot be undone</p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '20px' }}>
+                <input style={modalInputStyle} placeholder="Employee ID" />
+                <input style={modalInputStyle} placeholder="Employee Full Name" />
+                <input style={modalInputStyle} placeholder="Designation / Position" />
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <label style={{ fontSize: '12px', color: '#666' }}>Joining Date</label>
+                  <input type="date" style={modalInputStyle} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <label style={{ fontSize: '12px', color: '#666' }}>Last Working Date</label>
+                  <input type="date" style={modalInputStyle} />
+                </div>
+                <select style={modalInputStyle}>
+                  <option value="">Exit Reason</option>
+                  <option value="Resignation">Resignation</option>
+                  <option value="Termination">Termination</option>
+                  <option value="Retirement">Retirement</option>
+                </select>
+              </div>
+
+              <div className="form-footer" style={{ marginTop: '30px', justifyContent: 'space-between' }}>
+                <button className="btn-outline" onClick={() => setShowInitiateModal(false)}>Close</button>
+                <button 
+                   className="btn-danger" 
+                   style={{ padding: '10px 25px' }} 
+                   onClick={() => { alert("Exit process initiated successfully!"); setShowInitiateModal(false); }}
+                >
+                  Confirm Exit
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* VIEW MODAL (UNCHANGED) */}
       {selected && (
         <>
           <div
@@ -314,6 +385,15 @@ const ExitRequests = () => {
       )}
     </div>
   );
+};
+
+// HELPER STYLE FOR MODAL INPUTS
+const modalInputStyle = {
+  padding: '10px',
+  border: '1px solid #ddd',
+  borderRadius: '4px',
+  width: '100%',
+  fontSize: '14px'
 };
 
 export default ExitRequests;

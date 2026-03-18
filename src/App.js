@@ -32,10 +32,11 @@ import EssPortal from "./pages/EssPortal";
 import AdminPayrollDashboard from "./pages/payroll-admin/Dashboard/AdminPayrollDashboard";
 import AdminProcessPayroll from "./pages/payroll-admin/Process/AdminProcessPayroll";
 import AdminPayrollApprovals from "./pages/payroll-admin/Approvals/AdminPayrollApprovals";
-import AdminPayslips from "./pages/payroll-admin/Payslips/AdminPayslips";
 import AdminSalaryRelease from "./pages/payroll-admin/Release/AdminSalaryRelease";
 import AdminPayrollReports from "./pages/payroll-admin/Reports/AdminPayrollReports";
-import AdminSalaryStructure from "./pages/payroll-admin/AdminSalaryStructure";
+
+// FIXED: Using only ONE import for the Salary Structure component from the Payslips folder
+import AdminSalaryStructure from "./pages/payroll-admin/Payslips/AdminPayslips";
 
 import AssetMaster from "./pages/AssetManagement/AssetMaster";
 import AssignAsset from "./pages/AssetManagement/AssignAsset";
@@ -55,12 +56,10 @@ import HRDashboard from "./HR/pages/Dashboard/HRDashboard";
 import EmployeeListHR from "./HR/pages/EmployeeManagement/EmployeeList";
 import LeaveDashboard from "./HR/pages/LeaveManagement/LeaveDashboard";
 import AttendanceHR from "./HR/pages/Attendence/Attendence";
-import Onboarding from "./HR/pages/Onboarding/Onboarding";
 import TaskManagement from "./HR/pages/TaskManagement/TaskManagement";
 import ExitRequests from "./HR/pages/ExitManagement/ExitRequests";
 import Payroll from "./HR/pages/Payroll/Payroll";
 import Reports from "./HR/pages/Reports/Reports";
-// NEW IMPORT FOR HR ESS PORTAL
 import HrEssPortal from "./HR/pages/HrEss-portal"; 
 
 const Dashboard = lazy(() => import("./pages/dashboard/dashboard"));
@@ -135,6 +134,7 @@ function App() {
               }
             />
 
+            {/* ADMIN ONBOARDING */}
             <Route
               path="/onboarding"
               element={
@@ -159,17 +159,6 @@ function App() {
 
             {/* ============ ADMIN PAYROLL ============ */}
             <Route
-              path="/payrolll/dashboard"
-              element={
-                <ProtectedRoute allowedRoles={["ADMIN"]}>
-                  <MainLayout>
-                    <AdminPayrollDashboard />
-                  </MainLayout>
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
               path="/payrolll/process"
               element={
                 <ProtectedRoute allowedRoles={["ADMIN"]}>
@@ -186,17 +175,6 @@ function App() {
                 <ProtectedRoute allowedRoles={["ADMIN"]}>
                   <MainLayout>
                     <AdminPayrollApprovals />
-                  </MainLayout>
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/payrolll/payslips"
-              element={
-                <ProtectedRoute allowedRoles={["ADMIN"]}>
-                  <MainLayout>
-                    <AdminPayslips />
                   </MainLayout>
                 </ProtectedRoute>
               }
@@ -303,7 +281,7 @@ function App() {
               }
             />
 
-            {/* ============ ESS PORTAL (CONSOLIDATED MARKSHEET) ============ */}
+            {/* ============ ESS PORTAL ============ */}
             <Route
               path="/ess-portal"
               element={
@@ -324,18 +302,27 @@ function App() {
                 </ProtectedRoute>
               }
             >
+              {/* ADDED: Necessary index redirect so /hr shows Dashboard by default */}
+              <Route index element={<Navigate to="dashboard" replace />} />
+              
               <Route path="dashboard" element={<HRDashboard />} />
               <Route path="employees" element={<EmployeeListHR />} />
               <Route path="leave" element={<LeaveDashboard />} />
               <Route path="attendance" element={<AttendanceHR />} />
-              <Route path="onboarding" element={<Onboarding />} />
+              <Route path="onboarding" element={<OnboardingForm />} />
               <Route path="exit" element={<ExitRequests />} />
               <Route path="tasks" element={<TaskManagement />} />
               <Route path="payroll" element={<Payroll />} />
               <Route path="reports" element={<Reports />} />
               <Route path="my-profile" element={<MyProfile />} />
-              {/* This is the NEW route for the HR's personal ESS portal */}
               <Route path="ess-portal" element={<HrEssPortal />} /> 
+
+              {/* PAYROLL MODULE REPLICATION FOR HR PORTAL */}
+              <Route path="payroll/process" element={<AdminProcessPayroll />} />
+              <Route path="payroll/approvals" element={<AdminPayrollApprovals />} />
+              <Route path="payroll/release" element={<AdminSalaryRelease />} />
+              <Route path="payroll/reports" element={<AdminPayrollReports />} />
+              <Route path="payroll/salarystructure" element={<AdminSalaryStructure />} />
             </Route>
 
             {/* ============ EMPLOYEE PORTAL ============ */}
@@ -355,7 +342,6 @@ function App() {
               <Route path="profile" element={<EmployeeProfile />} />
             </Route>
 
-            {/* ============ FALLBACK REDIRECTS ============ */}
             <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
@@ -365,4 +351,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

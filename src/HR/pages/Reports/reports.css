@@ -1,0 +1,150 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+.reports-page {
+  padding: 25px;
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+/* =========================
+   HEADER SECTION
+========================= */
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters select,
+.filters input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+.secondary-btn,
+.export-btn {
+  background-color: #0f4c81;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.secondary-btn:hover,
+.export-btn:hover {
+  background-color: #0c3a63;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Click Effect */
+.secondary-btn:active,
+.export-btn:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================
+   KPI SECTION
+========================= */
+.kpi-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.kpi-box {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 15px;
+  border-left: 4px solid #007bff;
+  border-radius: 8px;
+}
+
+.kpi-box p {
+  font-size: 14px;
+  color: #777;
+}
+
+.kpi-box h3 {
+  margin-top: 5px;
+  color: #2c3e50;
+}
+
+
+/* =========================
+   TABLE SECTION
+========================= */
+.table-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-table th,
+.report-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.report-table th {
+  background-color: #f0f2f5;
+  font-weight: 600;
+}
+
+/* Row Hover */
+.report-table tbody tr:hover {
+  background-color: #f9fafc;
+}
+
+
+/* =========================
+   STATUS LABELS
+========================= */
+.active {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.inactive {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+.no-data {
+  text-align: center;
+  padding: 15px;
+  color: #dc3545;
+  font-weight: 500;
+}
